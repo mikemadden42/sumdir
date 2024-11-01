@@ -65,7 +65,7 @@ func main() {
 		files := fileGroups[extension]
 		fmt.Printf("%s:\n", extension)
 		for _, file := range files {
-			fmt.Printf("%s\n", file)
+			fmt.Printf("- %s\n", file)
 		}
 		fmt.Println()
 	}
