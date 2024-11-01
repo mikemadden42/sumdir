@@ -6,6 +6,7 @@ import (
 	"os"
 	"path/filepath"
 	"sort"
+	"strings"
 )
 
 // go run sumdir.go -dir ~ -hidden
@@ -28,6 +29,7 @@ func listFilesByExtension(directory string, showHidden bool) (map[string][]strin
 		}
 
 		extension := filepath.Ext(file.Name())
+		strings.TrimPrefix(".", extension)
 		fileGroups[extension] = append(fileGroups[extension], file.Name())
 	}
 
