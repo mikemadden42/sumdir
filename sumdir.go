@@ -29,7 +29,7 @@ func listFilesByExtension(directory string, showHidden bool) (map[string][]strin
 		}
 
 		extension := filepath.Ext(file.Name())
-		strings.TrimPrefix(".", extension)
+		extension = strings.TrimPrefix(extension, ".")
 		fileGroups[extension] = append(fileGroups[extension], file.Name())
 	}
 
